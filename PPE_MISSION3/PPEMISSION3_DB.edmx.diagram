@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c76a4ea03f64204910ebf65121cf6c3" Name="Diagram1">
+        <EntityTypeShape EntityType="PPE_MISSION3_md.famille" Width="1.5" PointX="11.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PPE_MISSION3_md.medecin" Width="1.5" PointX="1" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PPE_MISSION3_md.medicament" Width="1.5" PointX="8.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PPE_MISSION3_md.offrir" Width="1.5" PointX="6" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PPE_MISSION3_md.rapport" Width="1.5" PointX="3.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PPE_MISSION3_md.visiteur" Width="1.5" PointX="5.875" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="PPE_MISSION3_md.medicament_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="PPE_MISSION3_md.rapport_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="PPE_MISSION3_md.offrir_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="PPE_MISSION3_md.offrir_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="PPE_MISSION3_md.rapport_fk1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
