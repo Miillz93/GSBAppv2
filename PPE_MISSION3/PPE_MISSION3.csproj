@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,9 +10,27 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PPE_MISSION3</RootNamespace>
     <AssemblyName>PPE_MISSION3</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,28 +51,32 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MySql.Data.Entity">
-      <HintPath>..\..\..\..\Downloads\mysql-connector-dotnet\mysql-connector.net\MySql.Data.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MySql.Web">
-      <HintPath>..\..\..\..\Downloads\mysql-connector-dotnet\mysql-connector.net\MySql.Web.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -72,7 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="famille.cs">
-      <DependentUpon>PPEMISSION3_DB.tt</DependentUpon>
+      <DependentUpon>PPEMISSION3.tt</DependentUpon>
     </Compile>
     <Compile Include="FrmGerer.cs">
       <SubType>Form</SubType>
@@ -99,36 +122,36 @@
       <DependentUpon>FrmRapport.cs</DependentUpon>
     </Compile>
     <Compile Include="medecin.cs">
-      <DependentUpon>PPEMISSION3_DB.tt</DependentUpon>
+      <DependentUpon>PPEMISSION3.tt</DependentUpon>
     </Compile>
     <Compile Include="medicament.cs">
-      <DependentUpon>PPEMISSION3_DB.tt</DependentUpon>
+      <DependentUpon>PPEMISSION3.tt</DependentUpon>
     </Compile>
     <Compile Include="offrir.cs">
-      <DependentUpon>PPEMISSION3_DB.tt</DependentUpon>
+      <DependentUpon>PPEMISSION3.tt</DependentUpon>
     </Compile>
-    <Compile Include="PPEMISSION3_DB.Context.cs">
+    <Compile Include="PPEMISSION3.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PPEMISSION3_DB.Context.tt</DependentUpon>
+      <DependentUpon>PPEMISSION3.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="PPEMISSION3_DB.cs">
+    <Compile Include="PPEMISSION3.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PPEMISSION3_DB.tt</DependentUpon>
+      <DependentUpon>PPEMISSION3.tt</DependentUpon>
     </Compile>
-    <Compile Include="PPEMISSION3_DB.Designer.cs">
+    <Compile Include="PPEMISSION3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PPEMISSION3_DB.edmx</DependentUpon>
+      <DependentUpon>PPEMISSION3.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rapport.cs">
-      <DependentUpon>PPEMISSION3_DB.tt</DependentUpon>
+      <DependentUpon>PPEMISSION3.tt</DependentUpon>
     </Compile>
     <Compile Include="visiteur.cs">
-      <DependentUpon>PPEMISSION3_DB.tt</DependentUpon>
+      <DependentUpon>PPEMISSION3.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmAccueil.resx">
       <DependentUpon>FrmAccueil.cs</DependentUpon>
@@ -150,16 +173,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="PPEMISSION3_DB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PPEMISSION3_DB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="packages.config" />
-    <None Include="PPEMISSION3_DB.edmx.diagram">
-      <DependentUpon>PPEMISSION3_DB.edmx</DependentUpon>
+    <EntityDeploy Include="PPEMISSION3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PPEMISSION3.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PPEMISSION3.edmx.diagram">
+      <DependentUpon>PPEMISSION3.edmx</DependentUpon>
     </None>
-    <None Include="Properties\DataSources\rapport.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -174,21 +197,51 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PPEMISSION3_DB.Context.tt">
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PPEMISSION3.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PPEMISSION3_DB.edmx</DependentUpon>
-      <LastGenOutput>PPEMISSION3_DB.Context.cs</LastGenOutput>
+      <LastGenOutput>PPEMISSION3.Context.cs</LastGenOutput>
+      <DependentUpon>PPEMISSION3.edmx</DependentUpon>
     </Content>
-    <Content Include="PPEMISSION3_DB.tt">
+    <Content Include="PPEMISSION3.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PPEMISSION3.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PPEMISSION3_DB.edmx</DependentUpon>
-      <LastGenOutput>PPEMISSION3_DB.cs</LastGenOutput>
+      <DependentUpon>PPEMISSION3.edmx</DependentUpon>
+      <LastGenOutput>PPEMISSION3.cs</LastGenOutput>
+    </Content>
+    <Content Include="PPEMISSION3_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>PPEMISSION3.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
