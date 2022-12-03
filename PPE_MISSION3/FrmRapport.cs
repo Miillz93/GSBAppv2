@@ -14,17 +14,17 @@ namespace PPE_MISSION3
     public partial class FrmRapport : Form
     {
         //Champs privé
-        private PPE_MISSION3_entity mesDonnesEF;
+        private PPEMISSION3Entities mesDonnesEF;
         private int idMedecin;
 
         //Constructeur
-        public FrmRapport(PPE_MISSION3_entity mesDonnesEF, int idMedecin)
+        public FrmRapport(PPEMISSION3Entities mesDonnesEF, int idMedecin)
         {
             this.idMedecin = idMedecin;
 
             InitializeComponent();
             this.mesDonnesEF = mesDonnesEF;
-            this.BdsRapports.DataSource = mesDonnesEF.rapports.Local;
+            this.BdsRapports.DataSource = mesDonnesEF.rapport.Local;
 
             //Affectation de la methode getRapport dans un objet rapport
             rapport dernierRapport = getDernierRap(this.idMedecin);
@@ -40,7 +40,7 @@ namespace PPE_MISSION3
         //Retourne le derniere Rapport d'un Medecin
         private rapport getDernierRap(int idMedecin)
         {
-            var reqDernierRapp = (from rapport in this.mesDonnesEF.rapports
+            var reqDernierRapp = (from rapport in this.mesDonnesEF.rapport
                                   where rapport.idMedecin == idMedecin
                                   orderby rapport.id
                                   select rapport);
@@ -53,6 +53,11 @@ namespace PPE_MISSION3
             XDocument doc = XDocument.Parse("<?xml-stylesheet type=\"text/xsl\" href=\"dco.xsl\"?><S><B></B></S>");
             
             Console.ReadKey();
+        }
+
+        private void BdsRapports_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

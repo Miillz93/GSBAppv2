@@ -1,4 +1,4 @@
-﻿// La génération de code T4 est activée pour le modèle 'C:\Users\Walid\Documents\C#\PPE_MISSION3\PPE_MISSION3\PPEMISSION3_DB.edmx'. 
+﻿// La génération de code T4 est activée pour le modèle 'E:\Projects\Dotnet\Desktop\old\GSBAppv2\PPE_MISSION3\PPEMISSION3.edmx'. 
 // Pour activer la génération de code héritée, définissez la valeur de la propriété
 // du concepteur 'Stratégie de génération de code' sur 'ObjectContext hérité'. Cette propriété est disponible dans la fenêtre Propriétés lorsque le modèle
 //  est ouvert dans le concepteur.

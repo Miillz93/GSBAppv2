@@ -47,30 +47,33 @@
             // DateTB
             // 
             this.DateTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsRapports, "date", true));
-            this.DateTB.Location = new System.Drawing.Point(92, 50);
+            this.DateTB.Location = new System.Drawing.Point(82, 40);
+            this.DateTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateTB.Name = "DateTB";
             this.DateTB.ReadOnly = true;
-            this.DateTB.Size = new System.Drawing.Size(85, 26);
+            this.DateTB.Size = new System.Drawing.Size(76, 22);
             this.DateTB.TabIndex = 1;
             // 
             // BdsRapports
             // 
             this.BdsRapports.DataSource = typeof(PPE_MISSION3.rapport);
+            this.BdsRapports.CurrentChanged += new System.EventHandler(this.BdsRapports_CurrentChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 53);
+            this.label1.Location = new System.Drawing.Point(30, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Date : ";
             // 
             // DownloadBouton
             // 
-            this.DownloadBouton.Location = new System.Drawing.Point(316, 35);
+            this.DownloadBouton.Location = new System.Drawing.Point(281, 28);
+            this.DownloadBouton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DownloadBouton.Name = "DownloadBouton";
-            this.DownloadBouton.Size = new System.Drawing.Size(126, 57);
+            this.DownloadBouton.Size = new System.Drawing.Size(112, 46);
             this.DownloadBouton.TabIndex = 3;
             this.DownloadBouton.Text = "Telecharger";
             this.DownloadBouton.UseVisualStyleBackColor = true;
@@ -79,82 +82,86 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 140);
+            this.label2.Location = new System.Drawing.Point(30, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Motif :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 256);
+            this.label3.Location = new System.Drawing.Point(30, 205);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Bilan :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(253, 389);
+            this.label4.Location = new System.Drawing.Point(225, 311);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 20);
+            this.label4.Size = new System.Drawing.Size(81, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "ID Medecin :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 389);
+            this.label5.Location = new System.Drawing.Point(30, 311);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 20);
+            this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 7;
             this.label5.Text = "ID Visiteur :";
             // 
             // MotifTB
             // 
             this.MotifTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsRapports, "motif", true));
-            this.MotifTB.Location = new System.Drawing.Point(92, 118);
+            this.MotifTB.Location = new System.Drawing.Point(82, 94);
+            this.MotifTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MotifTB.Multiline = true;
             this.MotifTB.Name = "MotifTB";
             this.MotifTB.ReadOnly = true;
-            this.MotifTB.Size = new System.Drawing.Size(245, 56);
+            this.MotifTB.Size = new System.Drawing.Size(218, 46);
             this.MotifTB.TabIndex = 8;
             // 
             // BilanTB
             // 
             this.BilanTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsRapports, "bilan", true));
-            this.BilanTB.Location = new System.Drawing.Point(92, 213);
+            this.BilanTB.Location = new System.Drawing.Point(82, 170);
+            this.BilanTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BilanTB.Multiline = true;
             this.BilanTB.Name = "BilanTB";
             this.BilanTB.ReadOnly = true;
-            this.BilanTB.Size = new System.Drawing.Size(322, 129);
+            this.BilanTB.Size = new System.Drawing.Size(287, 104);
             this.BilanTB.TabIndex = 9;
             // 
             // IDVisiteurTB
             // 
             this.IDVisiteurTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsRapports, "idVisiteur", true));
-            this.IDVisiteurTB.Location = new System.Drawing.Point(131, 383);
+            this.IDVisiteurTB.Location = new System.Drawing.Point(116, 306);
+            this.IDVisiteurTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IDVisiteurTB.Name = "IDVisiteurTB";
             this.IDVisiteurTB.ReadOnly = true;
-            this.IDVisiteurTB.Size = new System.Drawing.Size(96, 26);
+            this.IDVisiteurTB.Size = new System.Drawing.Size(86, 22);
             this.IDVisiteurTB.TabIndex = 10;
             // 
             // IDMedecinTB
             // 
             this.IDMedecinTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BdsRapports, "idMedecin", true));
-            this.IDMedecinTB.Location = new System.Drawing.Point(357, 383);
+            this.IDMedecinTB.Location = new System.Drawing.Point(317, 306);
+            this.IDMedecinTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IDMedecinTB.Name = "IDMedecinTB";
             this.IDMedecinTB.ReadOnly = true;
-            this.IDMedecinTB.Size = new System.Drawing.Size(85, 26);
+            this.IDMedecinTB.Size = new System.Drawing.Size(76, 22);
             this.IDMedecinTB.TabIndex = 11;
             // 
             // FrmRapport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 437);
+            this.ClientSize = new System.Drawing.Size(432, 350);
             this.Controls.Add(this.IDMedecinTB);
             this.Controls.Add(this.IDVisiteurTB);
             this.Controls.Add(this.BilanTB);
@@ -166,6 +173,7 @@
             this.Controls.Add(this.DownloadBouton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DateTB);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRapport";
             this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.BdsRapports)).EndInit();
