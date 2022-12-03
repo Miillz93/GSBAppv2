@@ -13,21 +13,21 @@ namespace PPE_MISSION3
     public partial class FrmGerer : Form
     {
 
-        private PPE_MISSION3_entity mesDonnesEF;
+        private PPEMISSION3Entities mesDonnesEF;
         private int idMedecin = 0;
         private bool medecinRapport;
         private string departement;
         private string nom;
 
         //Constructeur
-        public FrmGerer(PPE_MISSION3_entity mesDonnesEF)
+        public FrmGerer(PPEMISSION3Entities mesDonnesEF)
         {
             InitializeComponent();
             medecinRapport = false;
 
             this.mesDonnesEF = mesDonnesEF;
             //Defini la source de données
-            this.bdsGerer.DataSource = mesDonnesEF.medecins.Local;
+           // this.bdsGerer.DataSource = mesDonnesEF.medecin.Local;
 
             listView1.View = View.Details;
 
@@ -69,13 +69,13 @@ namespace PPE_MISSION3
             int dpMedecins;
             if(nom=="" && departement == "") 
             {
-                reqLesMedecins = mesDonnesEF.medecins
+                reqLesMedecins = mesDonnesEF.medecin
                                     .OrderBy(medecin => medecin.nom).ThenBy(medecin => medecin.id);
             }
             else if(nom=="")
             {
                 dpMedecins = Convert.ToInt32(departement);
-                reqLesMedecins = mesDonnesEF.medecins
+                reqLesMedecins = mesDonnesEF.medecin
                                     .Where(medecin => medecin.departement.Equals(dpMedecins))
                                     .OrderBy(medecin => medecin.nom).ThenBy(medecin => medecin.id)
                                     ;
@@ -84,7 +84,7 @@ namespace PPE_MISSION3
             else if(departement=="")
             {
 
-                reqLesMedecins = mesDonnesEF.medecins
+                reqLesMedecins = mesDonnesEF.medecin
                                      .Where(medecin => medecin.nom.StartsWith(nom))
                                     .OrderBy(medecin => medecin.nom).ThenBy(medecin => medecin.id);
 
@@ -94,7 +94,7 @@ namespace PPE_MISSION3
             {
                 //nom et departement
                 dpMedecins = Convert.ToInt32(departement);
-                reqLesMedecins = mesDonnesEF.medecins
+                reqLesMedecins = mesDonnesEF.medecin
                                     .Where(medecin => medecin.nom.StartsWith(nom))
                                     .Where(medecin => medecin.departement.Equals(dpMedecins))
                                     .OrderBy(medecin => medecin.nom).ThenBy(medecin => medecin.id);

@@ -12,16 +12,16 @@ namespace PPE_MISSION3
 {
     public partial class FrmAccueil : Form
     {
-        private PPE_MISSION3_entity mesDonnesEF;
+        private PPEMISSION3Entities mesDonnesEF;
         public FrmAccueil()
         {
             InitializeComponent();
-            mesDonnesEF = new PPE_MISSION3_entity();
+            mesDonnesEF = new PPEMISSION3Entities();
         }
 
         private void MenuMedecinGerer_Click(object sender, EventArgs e)
         {
-            FrmGerer f = new FrmGerer(this.mesDonnesEF);
+            FrmGerer f = new FrmGerer(mesDonnesEF);
             f.Show();
         }
 
